@@ -10,7 +10,6 @@ pipeline {
       steps {
         git url: 'https://github.com/rangusrikanth/Docker-test.git',branch: 'main',
         credentialsId: 'GitHub-crds'
-        docker run hello-world
       }
     }
     stage('Building image') {
