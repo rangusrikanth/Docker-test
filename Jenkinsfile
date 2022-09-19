@@ -7,13 +7,5 @@ pipeline {
                 credentialsId: 'GitHub-crds'
             }
         }
-
-        stage('Building image') {
-            steps {
-                script {
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                }
-            }
-        }
     }
 }
