@@ -7,5 +7,10 @@ pipeline {
                 credentialsId: 'GitHub-crds'
             }
         }
+           stage('Docker Build') {
+        steps {
+      	    sh 'docker build -t rangusrikanth/sagest:latest .'
+        }
     }
+}
 }
