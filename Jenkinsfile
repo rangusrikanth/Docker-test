@@ -21,7 +21,7 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( 'srikanthrangu', dockerhub ) {
+          docker.withRegistry( 'rangusrikanth', dockerhub ) {
             dockerImage.push()
           }
         }
