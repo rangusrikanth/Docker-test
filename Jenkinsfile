@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "https://hub.docker.com/repository/docker/rangusrikanth/bwce"
+    registry = "rangusrikanth/bwce"
     registryCredential = 'dockerhub'
     dockerImage = 'rangusrikanth/bwce:1'
   }
@@ -14,14 +14,14 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+            dockerImage = docker.build rangusrikanth/bwce + ":$BUILD_NUMBER"
         }
       }
     }
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( 'rangusrikanth', dockerhub ) {
+          docker.withRegistry( 'https://hub.docker.com/repository/docker/rangusrikanth', dockerhub ) {
             app.push("${env.BUILD_NUMBER}")
              app.push("latest")
           }
