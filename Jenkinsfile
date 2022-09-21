@@ -2,7 +2,7 @@ pipeline {
   environment {
     registry = "rangusrikanth/bwce"
     registryCredential = 'dockerhub'
-    dockerimage= ''
+    dockerImage= ''
   }
   agent any
   stages {
@@ -21,8 +21,9 @@ pipeline {
     stage('Deploy Image') {
       steps{
         script {
-          docker.withRegistry( registry, registryCredential ) {
-            dockerimage.push()
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push("$BUILD_NUMBER")
+            dockerImage.push('latest')
           }
         }
       }
