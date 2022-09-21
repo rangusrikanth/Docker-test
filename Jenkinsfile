@@ -1,8 +1,8 @@
 pipeline {
   environment {
-    registry = "rangusrikanth/sagest"
+    registry = "rangusrikanth/bwce"
     registryCredential = 'dockerhub'
-    dockerImage = 'rangusrikanth/sagest:latest'
+    dockerImage = 'rangusrikanth/bwce:1'
   }
   agent any
   stages {
