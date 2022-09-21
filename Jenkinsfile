@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "rangusrikanth/bwce"
+    registry = "https://hub.docker.com/repository/docker/rangusrikanth/bwce"
     registryCredential = 'dockerhub'
     dockerImage = 'rangusrikanth/bwce:1'
   }
